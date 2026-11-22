@@ -55,11 +55,11 @@ window.WORKS = {
 
   // Edits (горизонтальні, свої)
   edits: [
-    { title: "Edit · 01", video: "https://youtu.be/cwnMyu-77NM" },
-    { title: "Edit · 02", video: "https://youtu.be/-s0ET_N-pV4" },
-    { title: "Edit · 03", video: "https://youtu.be/TVh7PRJXNME" },
-    { title: "Edit · 04", video: "https://youtu.be/5_lDYhWCPU0" },
-    { title: "Edit · 05", video: "https://youtu.be/rAFFBYHnQm0" },
+    { title: "LOTR · Cinematic", video: "https://youtu.be/cwnMyu-77NM" },
+    { title: "Flow · Lordly", video: "https://youtu.be/-s0ET_N-pV4" },
+    { title: "Pure Water · JJK × HxH", video: "https://youtu.be/TVh7PRJXNME" },
+    { title: "Dutch · We Need Money", video: "https://youtu.be/-3TiSK-NG2w" },
+    { title: "Spider-Man · Andrew Garfield", video: "https://youtu.be/rAFFBYHnQm0" },
   ],
 
   // Extensions & packs: демо-відео і посилання на покупку
