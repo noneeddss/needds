@@ -378,12 +378,13 @@ img{max-width:100%}
 .lb .big.has{aspect-ratio:auto;background:none;border:0}
 .lb .big img{display:block;max-width:100%;max-height:88vh;margin:auto}
 .tool .tv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.3) brightness(.7)}
-dialog.player{padding:0;border:0;background:none;overflow:visible;max-width:none;max-height:none}
+dialog.player{padding:0;border:0;background:none;overflow:hidden;position:fixed;inset:0;width:100vw;height:100%;max-width:none;max-height:none;margin:0}
+dialog.player[open]{display:grid;place-items:center}
 dialog.player::backdrop{background:rgba(5,3,3,.92)}
-.player .x{position:absolute;right:0;top:-2.6rem;background:none;border:1px solid #302627;color:#f6f0ef;padding:.3rem .7rem;font-family:var(--mono);font-size:.75rem}
+.player .x{position:fixed;z-index:2;right:max(16px,env(safe-area-inset-right,0px));top:max(16px,env(safe-area-inset-top,0px));background:rgba(10,7,7,.8)!important;background:none;border:1px solid #302627;color:#f6f0ef;padding:.3rem .7rem;font-family:var(--mono);font-size:.75rem}
 .player .x:hover{border-color:#ff1e1e;color:#ff1e1e}
-.plbox{width:min(92vw,150vh);aspect-ratio:16/9}
-.plbox.v{width:min(92vw,48vh);aspect-ratio:9/16}
+.plbox{width:min(92vw,(100dvh - 120px)*16/9);aspect-ratio:16/9}
+.plbox.v{width:min(92vw,(100dvh - 120px)*9/16);aspect-ratio:9/16}
 .plbox iframe,#dlg-media iframe{display:block;width:100%;height:100%;border:0;background:#000}
 #dlg-media{aspect-ratio:16/9}
 #dlg-media .thumb{height:100%}
@@ -499,7 +500,7 @@ dialog.player::backdrop{background:rgba(5,3,3,.92)}
 </div></section>
 
 <section id="edits" class="minor"><div class="wrap">
-  <div class="head"><h2 data-i="edits_h">Edits</h2><p data-i="edits_p">Personal edits. No brief, no client, just the cut.</p></div>
+  <div class="head"><h2 data-i="edits_h">Edits</h2></div>
   <div class="row w16" id="edits-row"></div>
 </div></section>
 
@@ -607,7 +608,7 @@ function card(it,i,vert,named=true){
 }
 function renderWorks(){
   const L=T[lang],sr=ytId(W0.showreel);
-  $("showreel").innerHTML=`<div class="thumb${sr?" has play":""}"${sr?` data-yt="${sr}" data-v="0" tabindex="0" role="button" aria-label="Showreel"`:""} style="--g:radial-gradient(circle at 30% 30%,#5a0b0e,transparent 65%)">${sr?`<img src="https://i.ytimg.com/vi/${sr}/hqdefault.jpg" alt="">`:`<span class="slot mono">${L.slot}</span>`}<span class="ratio mono">${L.reel_l}</span></div>`;
+  $("showreel").innerHTML=`<div class="thumb${sr?" has play":""}"${sr?` data-yt="${sr}" data-v="0" tabindex="0" role="button" aria-label="Showreel"`:""} style="--g:radial-gradient(circle at 30% 30%,#5a0b0e,transparent 65%)">${sr?`<img src="https://i.ytimg.com/vi/${sr}/hqdefault.jpg" alt="">`:`<span class="slot mono">${L.slot}</span>`}</div>`;
   $("hz").innerHTML=(W0.horizontal||[]).map((it,i)=>card(it,i,false)).join("");
   $("reels").innerHTML=(W0.vertical||[]).map((it,i)=>card(it,i+2,true)).join("")+`<a class="card next" href="#contact" data-next="next_reel"><div class="thumb"><i>+</i><b>${L.next_reel}</b><span class="mono">${L.next_cta}</span></div></a>`;
   $("vids").innerHTML=(W0.aiVideo||[]).map((it,i)=>card(it,i+3,true,false)).join("")+`<a class="card next" href="#contact" data-next="p_aiv"><div class="thumb"><i>+</i><b>${L.gen_v}</b><span class="mono">${L.next_cta}</span></div></a>`;
