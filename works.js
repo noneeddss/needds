@@ -17,10 +17,10 @@
 window.WORKS = {
 
   // Фон першого екрана: 10–15 с без звуку, mp4 до 20 МБ, клади в media/
-  heroVideo: "",                      // напр. "media/hero.mp4"
+  heroVideo: "media/hero.mp4",
 
   // Шоуріл у блоці About
-  showreel: "",
+  showreel: "https://youtu.be/HQoUpLeevp0",
 
   // WORK → Horizontal 16:9
   horizontal: [
@@ -55,11 +55,11 @@ window.WORKS = {
 
   // Edits (горизонтальні, свої)
   edits: [
-    { title: "Edit · 01", video: "" },
-    { title: "Edit · 02", video: "" },
-    { title: "Edit · 03", video: "" },
-    { title: "Edit · 04", video: "" },
-    { title: "Edit · 05", video: "" },
+    { title: "Edit · 01", video: "https://youtu.be/cwnMyu-77NM" },
+    { title: "Edit · 02", video: "https://youtu.be/-s0ET_N-pV4" },
+    { title: "Edit · 03", video: "https://youtu.be/TVh7PRJXNME" },
+    { title: "Edit · 04", video: "https://youtu.be/5_lDYhWCPU0" },
+    { title: "Edit · 05", video: "https://youtu.be/rAFFBYHnQm0" },
   ],
 
   // Extensions & packs: демо-відео і посилання на покупку
